@@ -81,9 +81,11 @@
     "workbox-webpack-plugin": "5.1.4"
   },
   "scripts": {
-    "start": "node scripts/start.js",
+    "run-client": "node scripts/start.js",
+    "run-server": "node ./api/server.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "start": "concurrently npm:run-*"
   },
   "eslintConfig": {
     "extends": [
@@ -161,6 +163,7 @@
     ]
   },
   "devDependencies": {
-    "@types/react-router-dom": "^5.1.7"
+    "@types/react-router-dom": "^5.1.7",
+    "concurrently": "^6.2.0"
   }
 }
